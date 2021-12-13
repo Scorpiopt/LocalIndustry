@@ -11,7 +11,9 @@
   <PreceptDef>
     <defName>LI_LocalIndustry</defName>
     <label>local industry</label>
-    <description>PLACEHOLDER</description>
+    <description> "The heart of industry has no better place then at home." 
+
+You can only use items and structures produced by the colony.</description>
 	<issue>LI_LocalIndustry</issue>
     <impact>High</impact>
     <displayOrderInIssue>0</displayOrderInIssue>

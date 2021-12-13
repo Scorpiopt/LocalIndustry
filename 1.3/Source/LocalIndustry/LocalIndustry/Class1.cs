@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
-using Verse.Noise;
-using static UnityEngine.UI.GridLayoutGroup;
 
 namespace LocalIndustry
 {
@@ -168,7 +166,7 @@ namespace LocalIndustry
 
         public bool ColonyCanUseIt(Thing t)
         {
-            if (t is Frame) return true;
+            if (t is Frame || t is Blueprint || t is Mineable || t.def.IsStuff) return true;
             if (t is Building || t.def.IsApparel || t.def.IsWeapon)
             {
                 return colonyItemsHashset.Contains(t);
