@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<SpecialThingFilterDef>
+		<defName>LI_AllowColonyItems</defName>
+		<label>allow colony items</label>
+		<description>Allow colony items.</description>
+		<parentCategory>Root</parentCategory>
+		<allowedByDefault>true</allowedByDefault>
+		<saveKey>allowStacksColonist</saveKey>
+		<workerClass>LocalIndustry.SpecialThingFilterWorker_ColonistItems</workerClass>
+	</SpecialThingFilterDef>
+
+</Defs>
+
+

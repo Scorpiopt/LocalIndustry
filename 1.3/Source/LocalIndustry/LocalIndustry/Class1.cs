@@ -96,35 +96,35 @@ namespace LocalIndustry
     //    }
     //}
 
-    [HarmonyPatch(typeof(ForbidUtility), "IsForbidden", new Type[] { typeof(Thing), typeof(Faction) })]
-    public static class Patch_IsForbidden_Faction
-    {
-        private static void Postfix(ref bool __result, Thing t, Faction faction)
-        {
-            if (faction == Faction.OfPlayer && faction.ideos.PrimaryIdeo.HasPrecept(LI_DefOf.LI_LocalIndustry))
-            {
-                if (!GameComponent_ColonyItems.Instance.ColonyCanUseIt(t))
-                {
-                    __result = true;
-                }
-            }
-        }
-    }
-
-    [HarmonyPatch(typeof(ForbidUtility), "IsForbidden", new Type[] { typeof(Thing), typeof(Pawn) })]
-    public static class Patch_IsForbidden
-    {
-        private static void Postfix(ref bool __result, Thing t, Pawn pawn)
-        {
-            if (pawn.Faction == Faction.OfPlayer && pawn.Ideo != null && pawn.Ideo.HasPrecept(LI_DefOf.LI_LocalIndustry))
-            {
-                if (!GameComponent_ColonyItems.Instance.ColonyCanUseIt(t))
-                {
-                    __result = true;
-                }
-            }
-        }
-    }
+    //[HarmonyPatch(typeof(ForbidUtility), "IsForbidden", new Type[] { typeof(Thing), typeof(Faction) })]
+    //public static class Patch_IsForbidden_Faction
+    //{
+    //    private static void Postfix(ref bool __result, Thing t, Faction faction)
+    //    {
+    //        if (faction == Faction.OfPlayer && faction.ideos.PrimaryIdeo.HasPrecept(LI_DefOf.LI_LocalIndustry))
+    //        {
+    //            if (!GameComponent_ColonyItems.Instance.ColonyCanUseIt(t))
+    //            {
+    //                __result = true;
+    //            }
+    //        }
+    //    }
+    //}
+    //
+    //[HarmonyPatch(typeof(ForbidUtility), "IsForbidden", new Type[] { typeof(Thing), typeof(Pawn) })]
+    //public static class Patch_IsForbidden
+    //{
+    //    private static void Postfix(ref bool __result, Thing t, Pawn pawn)
+    //    {
+    //        if (pawn.Faction == Faction.OfPlayer && pawn.Ideo != null && pawn.Ideo.HasPrecept(LI_DefOf.LI_LocalIndustry))
+    //        {
+    //            if (!GameComponent_ColonyItems.Instance.ColonyCanUseIt(t))
+    //            {
+    //                __result = true;
+    //            }
+    //        }
+    //    }
+    //}
 
     [HarmonyPatch(typeof(EquipmentUtility), "CanEquip",
     new Type[] { typeof(Thing), typeof(Pawn), typeof(string), typeof(bool) },
@@ -179,6 +179,16 @@ namespace LocalIndustry
             base.ExposeData();
             Scribe_Collections.Look(ref colonyItems, "colonyItems", LookMode.Reference);
             Init();
+        }
+    }
+
+    public class SpecialThingFilterWorker_ColonistItems : SpecialThingFilterWorker
+    {
+        public override bool Matches(Thing t)
+        {
+            var result = GameComponent_ColonyItems.Instance.ColonyCanUseIt(t);
+            Log.Message(t + " - result: " + result);
+            return result;
         }
     }
 }
