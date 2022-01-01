@@ -186,9 +186,7 @@ namespace LocalIndustry
     {
         public override bool Matches(Thing t)
         {
-            var result = GameComponent_ColonyItems.Instance.ColonyCanUseIt(t);
-            Log.Message(t + " - result: " + result);
-            return result;
+            return GameComponent_ColonyItems.Instance.ColonyCanUseIt(t);
         }
     }
 }
