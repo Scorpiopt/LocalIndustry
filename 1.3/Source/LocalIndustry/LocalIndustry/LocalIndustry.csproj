@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-	<LangVersion>latest</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,8 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="LI_DefOf.cs" />
+    <Compile Include="EquipmentUtility_CanEquip_Patch.cs" />
+    <Compile Include="GameComponent_ColonyItems.cs" />
+    <Compile Include="GenRecipe_MakeRecipeProducts_Patch.cs" />
+    <Compile Include="PRF_PlaceThingInSlotGroup_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScenPart_StartingThing_Defined_PlayerStartingThings_Patch.cs" />
+    <Compile Include="SpecialThingFilterWorker_ColonistItems.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
