@@ -11,6 +11,15 @@
 		<workerClass>LocalIndustry.SpecialThingFilterWorker_ColonistItems</workerClass>
 	</SpecialThingFilterDef>
 
+	<SpecialThingFilterDef>
+		<defName>LI_AllowNonColonyItems</defName>
+		<label>allow non colony items</label>
+		<description>Allow non colony items.</description>
+		<parentCategory>Root</parentCategory>
+		<allowedByDefault>true</allowedByDefault>
+		<saveKey>allowStacksNonColonist</saveKey>
+		<workerClass>LocalIndustry.SpecialThingFilterWorker_NonColonistItems</workerClass>
+	</SpecialThingFilterDef>
 </Defs>
 
 

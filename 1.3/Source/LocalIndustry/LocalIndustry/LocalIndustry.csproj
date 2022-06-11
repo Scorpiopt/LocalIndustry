@@ -49,6 +49,7 @@
     <Compile Include="PRF_PlaceThingInSlotGroup_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScenPart_StartingThing_Defined_PlayerStartingThings_Patch.cs" />
+    <Compile Include="SpecialThingFilterWorker_NonColonistItems.cs" />
     <Compile Include="SpecialThingFilterWorker_ColonistItems.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
