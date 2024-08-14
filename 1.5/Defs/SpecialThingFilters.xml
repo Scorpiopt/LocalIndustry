@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<SpecialThingFilterDef>
+		<defName>LI_AllowColonyItems</defName>
+		<label>allow colony items</label>
+		<description>Allow colony items.</description>
+		<parentCategory>Root</parentCategory>
+		<allowedByDefault>true</allowedByDefault>
+		<saveKey>allowStacksColonist</saveKey>
+		<workerClass>LocalIndustry.SpecialThingFilterWorker_ColonistItems</workerClass>
+	</SpecialThingFilterDef>
+
+	<SpecialThingFilterDef>
+		<defName>LI_AllowNonColonyItems</defName>
+		<label>allow non colony items</label>
+		<description>Allow non colony items.</description>
+		<parentCategory>Root</parentCategory>
+		<allowedByDefault>true</allowedByDefault>
+		<saveKey>allowStacksNonColonist</saveKey>
+		<workerClass>LocalIndustry.SpecialThingFilterWorker_NonColonistItems</workerClass>
+	</SpecialThingFilterDef>
+</Defs>
+
+

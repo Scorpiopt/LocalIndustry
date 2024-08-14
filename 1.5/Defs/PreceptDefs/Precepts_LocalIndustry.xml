@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>LI_LocalIndustry</defName>
+    <label>local industry</label>
+    <iconPath>UI/Issues/CraftingSpeed</iconPath>
+  </IssueDef>
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>LI_LocalIndustry</defName>
+    <label>local industry</label>
+    <description>"The heart of industry has no better place then at home." 
+
+You can only use items and structures produced by the colony.</description>
+	<issue>LI_LocalIndustry</issue>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>0</defaultSelectionWeight>
+    <associatedMemes>
+      <li>VME_CraftCulture</li>
+      <li>VME_CityBuilders</li>
+    </associatedMemes>
+	<statOffsets>
+      <GeneralLaborSpeed>0.25</GeneralLaborSpeed>
+	  <SmeltingSpeed>0.25</SmeltingSpeed>
+    </statOffsets>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>LI_CraftedBuilding</defName>
+    <durationDays>1.0</durationDays>
+    <stackLimit>10</stackLimit>
+    <stages>
+      <li>
+        <label>Crafted building</label>
+        <description>Everyday is a Good day to Craft.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+    <ThoughtDef>
+    <defName>LI_CraftedItem</defName>
+    <durationDays>1.0</durationDays>
+    <stackLimit>10</stackLimit>
+    <stages>
+      <li>
+        <label>Crafted item</label>
+        <description>Everyday is a Good day to Craft.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
